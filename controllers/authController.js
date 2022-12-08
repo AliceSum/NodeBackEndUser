@@ -31,11 +31,9 @@ const handleLogin = async (req, res) => {
   // evaluate password
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
-    // const roles = Object.values(foundUser.roles);
     // create JWTs
 
     //Authorized users can check their account balanc
-    //const roles = Object.values(foundUser.roles);
     //A trick to filter the boolean
     const roles = Object.values(foundUser.roles).filter(Boolean);
     const id = foundUser._id;
@@ -69,7 +67,7 @@ const handleLogin = async (req, res) => {
     //secure: true,
     // store this token in memory rather than local or javascript
 
-    res.json({ roles, accessToken, id });
+    res.json({ id, roles, accessToken });
   } else {
     res.sendStatus(401);
   }

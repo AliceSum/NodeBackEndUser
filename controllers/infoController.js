@@ -14,19 +14,17 @@ db.data ||= { users: [] };
 const { users } = db.data;
 
 const getInfo = async (req, res) => {
-  console.log("getInfo started");
   if (!req?.params?.id) {
     return res.status(400).json({ message: "user id required." });
   }
 
   const foundUser = users.find((p) => p._id === req.params.id);
   if (!foundUser) {
-    console.log(`No user matches id ${req.params.id}!`);
     return res
       .status(204)
       .json({ message: `No user matches id ${req.params.id}.` });
   }
-  console.log("check id post");
+
   //Authorized number is 5001,
   res.json({
     email: foundUser.email,
@@ -44,16 +42,36 @@ const getInfo = async (req, res) => {
   });
 };
 const updateInfo = async (req, res) => {
-  console.log(
-    "updateInfo started" + "res.status(400).json({ message: user id required. }"
-  );
   if (!req?.body?.id) {
-    console.log(req.body);
     return res.status(400).json({ message: "user id required." });
   }
-  const foundUser = users.find((p) => p._id === req.body.id);
+
+  const cookies = req.cookies;
+
+  if (!cookies?.jwt) return res.sendStatus(401);
+  const refreshToken = cookies.jwt;
+  const foundUser = users.find((p) => p.refreshToken === refreshToken);
+  if (!foundUser) return res.sendStatus(403); //Forbidden
+  // evaluate jwt
+
+  jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+    if (err || foundUser.email !== decoded.email) return res.sendStatus(403);
+    const roles = Object.values(foundUser.roles);
+    const accessToken = jwt.sign(
+      {
+        UserInfo: {
+          username: decoded.email,
+          roles: roles,
+        },
+      },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "30s" }
+    );
+    res.json(accessToken);
+  });
+
+  // const foundUser = users.find((p) => p._id === req.body.id);
   if (!foundUser) {
-    console.log(`No user matches id ${req.params.id}!`);
     return res
       .status(204)
       .json({ message: `No user matches id ${req.params.id}.` });
@@ -66,6 +84,8 @@ const updateInfo = async (req, res) => {
   if (req.body?.address) foundUser.address = req.body.address;
   if (req.body?.eyecolor) foundUser.eyecolor = req.body.eyecolor;
   await db.write();
-  res.json({ message: "Respond from server. User Information is changed" });
+  res.json({
+    message: "Respond from server. User Information is changed",
+  });
 };
 export { getInfo, updateInfo };

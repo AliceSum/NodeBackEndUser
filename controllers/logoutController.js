@@ -1,5 +1,3 @@
-import User from "../model/User.js";
-
 const handleLogout = async (req, res) => {
   //On client, also delete the accessToken
 
@@ -18,7 +16,6 @@ const handleLogout = async (req, res) => {
   // Delete refreshToken in db
   foundUser.refreshToken = "";
   const result = await foundUser.save();
-  console.log(result);
   // secure: true - only serves on https
   res.clearCookie("jwt", { httpOnly: true, sameSite: "None", secure: true });
   res.sendStatus(204); //Send no content

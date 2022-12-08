@@ -1,4 +1,3 @@
-import User from "../model/User.js";
 import bcrypt from "bcrypt";
 import { v4 as uuidv4 } from "uuid";
 import { v1 as uuidv1 } from "uuid";
@@ -18,52 +17,64 @@ db.data ||= { users: [] };
 const { users } = db.data;
 
 const handleNewUser = async (req, res) => {
-  const { age, eyeColor, first, last, company, email, pwd, phone, address } =
-    req.body;
-  console.log("Yes?");
-  console.log(users);
+  const {
+    age,
+    eyeColor,
+    first,
+    last,
+    pic_link,
+    company,
+    email,
+    pwd,
+    phone,
+    address,
+    balance,
+  } = req.body;
   if (
     !age ||
     !eyeColor ||
     !first ||
     !last ||
+    !pic_link ||
     !company ||
     !email ||
     !pwd ||
     !phone ||
-    !address
+    !address ||
+    !balance
   )
     return res.status(400).json({
       message:
-        "The following are required: Age, eye color, first name, last name, company, email, password, phone number, address",
+        "The following are required: Age, eye color, first name, last name, picture link, company, email, password, phone number, address, Balance",
     });
-
-  const duplicate = users.find((u) => u.email === email);
+  //case doesn't mater to email, so we need to check it
+  const duplicate = users.find((u) => u.email === email.toLowerCase());
 
   if (duplicate) return res.sendStatus(409); //Conflict
   try {
     // bcrypt the password
     const hashedPwd = await bcrypt.hash(pwd, 10);
     //create and store the new user data
-    console.log("console.log(users)");
-    console.log(users);
+
+    const first_id = uuidv1();
+    const second_id = uuidv4();
     users.push({
-      _id: uuidv1(),
-      guid: uuidv4(),
+      _id: first_id,
+      guid: second_id,
       isActive: true, //new user means active
-      balance: "$1,999.00",
-      picture: "http://XXXXXit/32x32",
+      balance: balance,
+      picture: pic_link,
       age: age,
       eyeColor: eyeColor,
       name: { first: first, last: last },
       company: company,
       email: email,
-      salt: "XXXXXX*334",
       password: hashedPwd,
       phone: phone,
       address: address,
+      //I don't allow the front end to control the role because it is not secuity.
+      //Without Authorized: 5001, it will be unauthorized.
       roles: {
-        Authorized: 5001, //default should not include this.
         User: 3005,
       },
     });

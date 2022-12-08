@@ -28,16 +28,7 @@ import refresh from "./routes/refresh.js";
 import logout from "./routes/logout.js";
 import info from "./routes/info.js";
 
-import employees from "./routes/api/employees.js";
-
-// const mongoose = require("mongoose");
-// const connectDB = require("./config/dbConn");
-import mongoose from "mongoose";
-import connectDB from "./config/dbConn.js";
 const PORT = process.env.PORT || 3500;
-
-// //Connect to MongoDB
-connectDB();
 
 app.use(logger);
 
@@ -68,7 +59,6 @@ app.use("/logout", logout);
 //This works like a waterfall, so the routes below will require verifyJWT middleware
 app.use(verifyJWT);
 app.use("/info", info); //get use info at profile page
-app.use("/employees", employees);
 
 // Route handlers
 
@@ -85,8 +75,4 @@ app.all("*", (req, res) => {
 
 app.use(errorHandler);
 
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-mongoose.connection.once("open", () => {
-  console.log("connected to MongoDB");
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-});
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
