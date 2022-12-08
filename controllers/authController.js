@@ -35,24 +35,27 @@ const handleLogin = async (req, res) => {
     // create JWTs
 
     //Authorized users can check their account balanc
-    const roles = Object.values(foundUser.roles);
-
+    //const roles = Object.values(foundUser.roles);
+    //A trick to filter the boolean
+    const roles = Object.values(foundUser.roles).filter(Boolean);
+    const id = foundUser._id;
     const accessToken = jwt.sign(
       {
         UserInfo: {
           email: foundUser.email,
           roles: roles,
+          id: id,
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "360s" }
+      { expiresIn: "1d" }
     );
     const refreshToken = jwt.sign(
       { email: foundUser.email },
       process.env.REFRESH_TOKEN_SECRET,
       { expiresIn: "1d" }
     );
-    //we may not need to store the refresh token here.
+    //store the refresh token.
     foundUser.refreshToken = refreshToken;
     //store this in http only to avoid storing it in javascript of cookie
 
@@ -66,7 +69,7 @@ const handleLogin = async (req, res) => {
     //secure: true,
     // store this token in memory rather than local or javascript
 
-    res.json({ roles, accessToken });
+    res.json({ roles, accessToken, id });
   } else {
     res.sendStatus(401);
   }

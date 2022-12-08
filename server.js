@@ -6,9 +6,8 @@ const app = express();
 
 import path from "path";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { dirname } from "node:path";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import cors from "cors";
 
@@ -27,6 +26,7 @@ import register from "./routes/register.js";
 import auth from "./routes/auth.js";
 import refresh from "./routes/refresh.js";
 import logout from "./routes/logout.js";
+import info from "./routes/info.js";
 
 import employees from "./routes/api/employees.js";
 
@@ -67,6 +67,7 @@ app.use("/logout", logout);
 
 //This works like a waterfall, so the routes below will require verifyJWT middleware
 app.use(verifyJWT);
+app.use("/info", info); //get use info at profile page
 app.use("/employees", employees);
 
 // Route handlers

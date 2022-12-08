@@ -1,5 +1,7 @@
 import User from "../model/User.js";
 import bcrypt from "bcrypt";
+import { v4 as uuidv4 } from "uuid";
+import { v1 as uuidv1 } from "uuid";
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 import { join, dirname } from "node:path";
@@ -46,17 +48,17 @@ const handleNewUser = async (req, res) => {
     console.log("console.log(users)");
     console.log(users);
     users.push({
-      _id: "5410953eb0e0c0ae25608277",
-      guid: "eab0324c-75ef-49a1-9c49-be2d68f50b96",
-      isActive: true,
+      _id: uuidv1(),
+      guid: uuidv4(),
+      isActive: true, //new user means active
       balance: "$1,999.00",
-      picture: "http://placehold.it/32x32",
+      picture: "http://XXXXXit/32x32",
       age: age,
       eyeColor: eyeColor,
       name: { first: first, last: last },
       company: company,
       email: email,
-      salt: "23derd*334",
+      salt: "XXXXXX*334",
       password: hashedPwd,
       phone: phone,
       address: address,
