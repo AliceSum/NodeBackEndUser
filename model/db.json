@@ -135,6 +135,181 @@
         "User": 3005
       },
       "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFpcnBsYW5jZUBnbWFpbC5jb20iLCJpYXQiOjE2NzA0OTczMzcsImV4cCI6MTY3MDU4MzczN30.4xz_26ZbIeZFkrHcNRwscEW6NZd8VZrRxxbFi2OmJLw"
+    },
+    {
+      "_id": "58e3e7b0-770b-11ed-b03b-2deae2540c9e",
+      "guid": "08117924-eabb-4675-bf59-c6cf680e5146",
+      "isActive": true,
+      "balance": "1111111",
+      "picture": "yahoo.com/1.jpg",
+      "age": "25",
+      "eyeColor": "green",
+      "name": {
+        "first": "John",
+        "last": "Doe"
+      },
+      "company": "GeekOne",
+      "email": "JohnDoe@geeknet.net",
+      "password": "$2b$10$74Srp2n4GC9E5kM9rRdsz.9rXIvB4skYSHGHY2jRurrdJHUb.nIMG",
+      "phone": "+1 (111) 222-3333",
+      "address": "121 City drive, Apple City, California, 90000",
+      "roles": {
+        "User": 3005
+      }
+    },
+    {
+      "_id": "f6b0a230-770b-11ed-82ec-b5bec75f7f09",
+      "guid": "97c70461-7470-43fa-a99d-76af3c183e79",
+      "isActive": true,
+      "balance": "111111111",
+      "picture": "yahoo.com/1.jpg",
+      "age": "25",
+      "eyeColor": "yellow",
+      "name": {
+        "first": "Sun",
+        "last": "Shine"
+      },
+      "company": "Sea Wave",
+      "email": "SunShine@gmail.com",
+      "password": "$2b$10$j7xzd9qKOJp7Nf.Ou99QUOyeG/D0bKKYWwubPMyO3Hf4.oCA3iVNG",
+      "phone": "+1 (222) 333-9999",
+      "address": "121 Sky st, Blue City, California, 90200",
+      "roles": {
+        "User": 3005
+      },
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlN1blNoaW5lQGdtYWlsLmNvbSIsImlhdCI6MTY3MDUxMzE0MCwiZXhwIjoxNjcwNTk5NTQwfQ.OgR1rLXHrr2PEFpmvYvjM4FssXfm-R0x2UlLoWBpp4o"
+    },
+    {
+      "_id": "098e9f30-770f-11ed-89ae-8105e2030695",
+      "guid": "b763d08a-fc39-46fb-bccf-ce3703d4725d",
+      "isActive": true,
+      "balance": "111111",
+      "picture": "yahoo.com/1.jpg",
+      "age": "25",
+      "eyeColor": "Brown",
+      "name": {
+        "first": "Adam",
+        "last": "Lee"
+      },
+      "company": "GeekOne",
+      "email": "Coding@gmail.com",
+      "password": "$2b$10$Nfd27ESVdPAGQ1CSLKJmEOyDHNgcP4UExd4d0UOvlwBLTZTu9q4TW",
+      "phone": "+1 (111) 222-4444",
+      "address": "511 Sky street, A City, California, 90000",
+      "roles": {
+        "User": 3005
+      },
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkNvZGluZ0BnbWFpbC5jb20iLCJpYXQiOjE2NzA1MTQyMTgsImV4cCI6MTY3MDYwMDYxOH0.pNxzXbacD8HKFRd2VzwbAL9uS7zsgfcG3wfmRBx_Mwg"
+    },
+    {
+      "_id": "0b7962c0-7710-11ed-a60d-7b43b8bee532",
+      "guid": "1c50fdca-11db-445e-951a-f0300fc8dd54",
+      "isActive": true,
+      "balance": "111",
+      "picture": "Yahoo.com/1.jpg",
+      "age": "123213",
+      "eyeColor": "jdalsijdliw",
+      "name": {
+        "first": "asdjwdlij",
+        "last": "jadijawljd"
+      },
+      "company": "adjwlidjwali",
+      "email": "PP1@gmail.com",
+      "password": "$2b$10$Gr2dUqAUPl3m1ivfb3ps8.2rRezqjIk7x6E8Y4j8YHsSq6YnO/YB6",
+      "phone": "12312321313",
+      "address": "23123 jdsaldjlawde",
+      "roles": {
+        "User": 3005
+      }
+    },
+    {
+      "_id": "2d358e20-7710-11ed-b1c4-03af04c49e3d",
+      "guid": "09660f77-7301-4587-9293-0f47d92a36ef",
+      "isActive": true,
+      "balance": "22323",
+      "picture": "yahoo.com/1.jpg",
+      "age": "2132323",
+      "eyeColor": "sadsad",
+      "name": {
+        "first": "zzzzzzzzz",
+        "last": "sssssssssssssss"
+      },
+      "company": "13fdffffffffffffff",
+      "email": "asd@gmail.com",
+      "password": "$2b$10$yQrfdEZAfcbXfk.zhcdrGOB1uouz/7UAJfqcyeM2CzodoEtrVHcx.",
+      "phone": "23213232",
+      "address": "asssssssssssssssssssssssssss",
+      "roles": {
+        "User": 3005
+      },
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFzZEBnbWFpbC5jb20iLCJpYXQiOjE2NzA1MTQ3MzIsImV4cCI6MTY3MDYwMTEzMn0.46t_8tXuhMhGr2IM_iERghAmCQJ2Dy_WzUoM2ZnY4h4"
+    },
+    {
+      "_id": "f3186e00-7710-11ed-8868-ddfba3f4fba4",
+      "guid": "5ee3524b-1d0e-4518-9936-ab00a23e7bdf",
+      "isActive": true,
+      "balance": "213123",
+      "picture": "yahoo.com/1.jpg",
+      "age": "20",
+      "eyeColor": "Blue",
+      "name": {
+        "first": "White",
+        "last": "One"
+      },
+      "company": "Geek123",
+      "email": "WhiteOne@gmail.com",
+      "password": "$2b$10$yJlghCiHEaCNc1sGzIsg/uiZZCx9oKVUOT9mjcQPAA1ptiIs6R.hq",
+      "phone": "+1 (211) 333 4444",
+      "address": "212  Sea street, E1 City, California, 81000",
+      "roles": {
+        "Authorized": 5001,
+        "User": 3005
+      },
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IldoaXRlT25lQGdtYWlsLmNvbSIsImlhdCI6MTY3MDUxNTEzMCwiZXhwIjoxNjcwNjAxNTMwfQ.DS-QCl4GIbXA5kYE66n6EGn9TIIf2rPePeRDczOlI00"
+    },
+    {
+      "_id": "5024d060-7712-11ed-b06f-8f055fc6216d",
+      "guid": "dc47866f-d716-46c4-aa59-18ea3fff007e",
+      "isActive": true,
+      "balance": "$111111",
+      "picture": "yahoo.com/1.jpg",
+      "age": "20",
+      "eyeColor": "Green",
+      "name": {
+        "first": "Pum",
+        "last": "Sma"
+      },
+      "company": "Sky1",
+      "email": "PUMSMA@gmail.com",
+      "password": "$2b$10$SIQjGK7F6L/ovE4RNgE/IuGPZXa9i4dWSWNNO1h/UhbtvVmD7yk52",
+      "phone": "+1 (444) 555 9999",
+      "address": "222 Green street, B1 City, California",
+      "roles": {
+        "User": 3005
+      }
+    },
+    {
+      "_id": "a5a5da20-7712-11ed-9450-f906fe07b406",
+      "guid": "6f024995-2767-47ff-8006-7bb14493e9cc",
+      "isActive": true,
+      "balance": "$1232323",
+      "picture": "google.com/1.jpg",
+      "age": "25",
+      "eyeColor": "Green",
+      "name": {
+        "first": "Ground",
+        "last": "Sky"
+      },
+      "company": "Meta",
+      "email": "Airplane@gmail.com",
+      "password": "$2b$10$A0jJ4qmEBuGyocR00IObzuOYwzsJqxpUniRDFtObjwMLurhRGjcUm",
+      "phone": "+1(111) (121) (2222)",
+      "address": "456 sea street, BA City, New York, 00001",
+      "roles": {
+        "Authorized": 5001,
+        "User": 3005
+      },
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IkFpcnBsYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY3MDUxNjEyMywiZXhwIjoxNjcwNjAyNTIzfQ.7bhr_-GmBvHEB2fnYqhFCMNl_rBNtRHzEiHnH9OWDvE"
     }
   ]
 }
